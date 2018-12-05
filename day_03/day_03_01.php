@@ -29,10 +29,6 @@ foreach ($sheets as $sheet) {
 
     for ($i = $x; $i < $x + $w; $i++) {
         for ($j = $y; $j < $y + $h; $j++) {
-            if (empty($fabric[$j][$i])) {
-                var_dump($sheet, $x, $y, $w, $h, $id, $i, $j);
-                die;
-            }
             if ('.' === $fabric[$j][$i]) {
                 $fabric[$j][$i] = $sheet['id'];
             } else {

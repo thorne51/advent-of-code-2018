@@ -44,3 +44,21 @@ foreach ($logs as $row) {
             break;
     }
 }
+
+$mostFrequentMinute = 0;
+$frequency = 0;
+$guard = null;
+foreach ($guards as $guardId => $minutes) {
+    $minute = array_search(max($minutes), $minutes);
+    $times = $minutes[$minute];
+
+    echo "#{$guardId} slept {$times} times during minute {$minute}\n";
+
+    if ($times > $frequency) {
+        $frequency = $times;
+        $guard = $guardId;
+        $mostFrequentMinute = $minute;
+    }
+}
+
+echo "#{$guard} most frequently slept at minute {$mostFrequentMinute} ({$frequency} times): {$guard} * {$mostFrequentMinute} = " . ($guard * $mostFrequentMinute) . "\n";

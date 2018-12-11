@@ -15,3 +15,14 @@ function manhattan_distance($vector1, $vector2)
     }
     return $sum;
 }
+
+function print_grid($grid) {
+    echo PHP_EOL;
+
+    foreach ($grid as $rows) {
+        foreach ($rows as $cols) {
+            echo "{$cols}";
+        }
+        echo PHP_EOL;
+    }
+}

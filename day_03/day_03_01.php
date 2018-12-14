@@ -1,4 +1,5 @@
 <?php
+$start = microtime(true);
 $input = explode("\n", file_get_contents('input.txt'));
 //$input = explode("\n", file_get_contents('input_test.txt'));
 
@@ -47,3 +48,4 @@ foreach ($fabric as $row) {
     }
 }
 var_dump($overlapCount);
+echo "That took " . (microtime(true) - $start) . " seconds." . PHP_EOL;

@@ -1,4 +1,5 @@
 <?php
+$start = microtime(true);
 $input = explode("\n", file_get_contents('input.txt'));
 //$input = explode("\n", file_get_contents('input_test.txt'));
 
@@ -60,3 +61,4 @@ foreach ($sheets as $id => $sheet) {
         break;
     }
 }
+echo "That took " . (microtime(true) - $start) . " seconds.";
